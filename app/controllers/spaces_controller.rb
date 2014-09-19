@@ -4,7 +4,7 @@ class SpacesController < ApplicationController
   # GET /spaces
   # GET /spaces.json
   def index
-    @spaces = Space.paginate(per_page: 10, page: params[:page])
+    @spaces = @q.result.includes(:images).paginate(per_page: 10, page: params[:page])
   end
 
   # GET /spaces/1
@@ -69,6 +69,7 @@ class SpacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def space_params
-      params.require(:space).permit(:title, :price, :size, :description, :address, :zipcode, :email, :active)
+      params.require(:space).permit(:title, :price, :size, :description, :address, :zipcode, :email, :active, :q)
     end
+
 end

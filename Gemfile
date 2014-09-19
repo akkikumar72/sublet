@@ -7,7 +7,7 @@ gem 'pg'
 gem 'carrierwave'
 gem 'slim'
 gem "slim-rails"
-gem 'ransack'
+gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
 gem 'will_paginate'
 gem "rmagick"
 gem 'sass-rails', '~> 4.0.3'
