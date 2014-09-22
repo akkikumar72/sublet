@@ -1,7 +1,4 @@
-
-
 = render "ransack"
-
 .sidebar
   = render 'sidebar'
 
@@ -20,7 +17,6 @@ table
       th Active
       th
       th
-      th
 
   tbody
     - @spaces.each do |space|
@@ -34,8 +30,6 @@ table
         td = space.email
         td = space.active
         td = link_to 'Show', space
-        td = link_to 'Edit', edit_space_path(space)
-        td = link_to 'Destroy', space, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 

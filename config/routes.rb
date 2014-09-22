@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  resources :spaces
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+
+  resources :spaces, except: [:update, :edit] do
+    member do
+      get 'remove'
+    end
+  end
 
   root 'spaces#index'
   # The priority is based upon order of creation: first created -> highest priority.

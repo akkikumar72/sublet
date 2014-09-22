@@ -1,3 +1,5 @@
+p#notice = notice
+
 p
   strong Title:
   = @space.title
@@ -19,10 +21,13 @@ p
 p
   strong Email:
   = @space.email
-
+p
+  strong Active:
+  = @space.active
 
 - @space.images.each do |image|
   = image_tag image.file.url
 end
 
+= link_to 'Destroy', @space, data: {:confirm => 'Are you sure?'}, :method => :delete
 = link_to 'Back', spaces_path

@@ -1,0 +1,11 @@
+p.strong
+  ' Save this email! You'll need it to remove your listing:
+
+p
+  ' Your listing has been added! You can access it here
+= space_url(@space)
+
+p
+  ' To remove your listing click here:
+
+= remove_space_url(id: @space.id)

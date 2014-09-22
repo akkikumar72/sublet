@@ -8,7 +8,7 @@ class CreateSpaces < ActiveRecord::Migration
       t.string :address
       t.integer :zipcode
       t.string :email
-      t.boolean :active
+      t.boolean :active, default: true
 
       t.timestamps
     end

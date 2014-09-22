@@ -6,6 +6,7 @@ gem 'rails', '4.1.5'
 gem 'pg'
 gem 'carrierwave'
 gem 'slim'
+gem 'friendly_id'
 gem "slim-rails"
 gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
 gem 'will_paginate'
@@ -18,3 +19,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'spring',        group: :development
 gem 'faker',        group: :development
+gem "letter_opener", :group => :development
+gem "annotate", :group => :development
+gem 'letter_opener_web', :group => :development

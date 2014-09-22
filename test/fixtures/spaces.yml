@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: spaces
+#
+#  id          :uuid             not null, primary key
+#  title       :string(255)
+#  price       :integer
+#  size        :integer
+#  description :text
+#  address     :string(255)
+#  zipcode     :integer
+#  email       :string(255)
+#  active      :boolean
+#  created_at  :datetime
+#  updated_at  :datetime
+#  slug        :string(255)
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
