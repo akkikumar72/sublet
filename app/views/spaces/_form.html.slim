@@ -1,4 +1,4 @@
-= simple_form_for @space do |f|
+= simple_form_for @space , html: {multipart: true}  do |f|
   = f.input :title
   = f.input :price
   = f.input :size
@@ -6,4 +6,9 @@
   = f.input :address
   = f.input :zipcode
   = f.input :email
+
+  = f.fields_for :images do |builder|
+    = render 'image_fields', f: builder
+  = link_to_add_fields "Add Image", f, :images
+
   = f.button :submit
