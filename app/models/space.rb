@@ -20,13 +20,13 @@ class Space < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  has_many :images
+  has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
 
   validates_numericality_of :size, :zipcode, :only_integer => true, :greater_than_or_equal_to => 1
   validates_presence_of :title, :price, :size, :zipcode, :email
 
-  default_scope -> { where(active: true) }
+  default_scope -> { where(active: true).order("created_at DESC") }
   after_commit :notify_user_with_email, on: :create
 
 
@@ -39,6 +39,10 @@ class Space < ActiveRecord::Base
   def mark_as_inactive
     self.active = false
     self.save
+  end
+
+  def self.find(id)
+    friendly.find(id)
   end
 
   private

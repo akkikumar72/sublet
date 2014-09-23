@@ -2,34 +2,17 @@
 .sidebar
   = render 'sidebar'
 
-h1 Listing spaces
-
 table
   thead
     tr
+      th
       th Title
-      th Price
-      th Size
-      th Description
-      th Address
-      th Zipcode
-      th Email
-      th Active
-      th
-      th
 
   tbody
     - @spaces.each do |space|
       tr
-        td = space.title
-        td = space.price
-        td = space.size
-        td = space.description
-        td = space.address
-        td = space.zipcode
-        td = space.email
-        td = space.active
-        td = link_to 'Show', space
+        td = image_tag(space.images.first.file.url(:thumb)) unless space.images_count ==0
+        td = link_to space.title, space
 
 br
 
