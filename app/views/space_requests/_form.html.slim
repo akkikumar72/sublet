@@ -1,0 +1,21 @@
+= form_for @space_request do |f|
+  - if @space_request.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@space_request.errors.count, "error")} prohibited this space_request from being saved:"
+      ul
+        - @space_request.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :size
+    = f.number_field :size
+  .field
+    = f.label :city
+    = f.text_field :city
+  .field
+    = f.label :budget
+    = f.text_field :budget
+  .field
+    = f.label :email
+    = f.text_field :email
+  .actions = f.submit 'Save'

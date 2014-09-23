@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :space_requests
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   if Rails.env.development?
