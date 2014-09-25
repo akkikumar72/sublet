@@ -1,0 +1,39 @@
+/* Header */
+.header_add_space{
+  color: white !important;
+}
+
+
+
+/* Sidebar */
+.sidebar input[type="button"], .sidebar input[type="submit"], .sidebar input[type="reset"] {
+  margin-top: 15px;
+  background:none!important;
+  border:none;
+  padding:0!important;
+  border-bottom:1px solid #428bca;
+  color: #428bca;
+  cursor: pointer;
+}
+
+
+
+/* landing Page table */
+.spaces_table td{
+  padding-top: 12px;
+}
+.spaces_table td.space_link{
+    padding-left: 12px;
+}
+
+
+/* Space show page */
+.show_space{
+  text-align: center;
+}
+
+.show_space .contact_owner{
+  display: block;
+  width:200px;
+  margin:15px auto;
+}

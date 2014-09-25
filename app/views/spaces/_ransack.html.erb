@@ -1,10 +1,11 @@
-<%= search_form_for @q do |f| %>
-
-<%= f.label :zipcode_eq, "Zipcode" %>
-<%= f.search_field :zipcode_eq %>
-<div style="display:none;">
-  <%= f.search_field :size_gteq %>
-  <%= f.search_field :size_lteq %>
+<div class="row well" style='text-align:center'>
+  <%= search_form_for @q do |f| %>
+  <%= f.label :zipcode_eq, "Zipcode" %>
+  <%= f.search_field :zipcode_eq %>
+  <div style="display:none;">
+    <%= f.search_field :size_gteq %>
+    <%= f.search_field :size_lteq %>
+  </div>
+  <%= f.submit %>
+  <% end %>
 </div>
-<%= f.submit %>
-<% end %>

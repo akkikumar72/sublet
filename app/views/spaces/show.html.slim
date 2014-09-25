@@ -1,28 +1,23 @@
-p
-  strong Title:
-  = @space.title
-p
-  strong Price:
-  = @space.price
-p
-  strong Size:
-  = @space.size
-p
-  strong Description:
-  = @space.description
-p
-  strong Address:
-  = @space.address
-p
-  strong Zipcode:
-  = @space.zipcode
-p
-  strong Email:
-  = @space.email
+= render "ransack"
+
+.row.well
+  .col-lg-2.sidebar
+    = render 'sidebar'
 
 
-- @space.images.each do |image|
-  = image_tag image.file.url
-end
+  .col-lg-8.show_space
+    = link_to '< BACK TO RESULTS', spaces_path
+    h2
+      = "#{@space.title} - Rs.#{@space.price}"
+    h3
+      = "#{@space.address} - Rs.#{@space.zipcode}"
+    br
+    h4.description
+      = @space.description
+    = link_to 'CONTACT OWNER', "mail-to:#{@space.email}", class: 'contact_owner btn btn-primary'
 
-= link_to 'Back', spaces_path
+    = render 'spaces/images', space: @space
+
+
+  .col-lg-2.sidebar
+    = render 'layouts/fake'

@@ -23,3 +23,8 @@ gem "letter_opener", :group => :development
 gem "annotate", :group => :development
 gem 'letter_opener_web', :group => :development
 gem 'activeadmin', github: 'activeadmin'
+
+
+gem 'quiet_assets',  group: :development
+gem 'bootstrap-sass-rails'
+gem 'will_paginate-bootstrap'

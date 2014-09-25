@@ -1,4 +1,5 @@
 class SpacesController < ApplicationController
+
   before_action :set_space, only: [:show, :edit, :update]
   before_action :find_to_destroy, only: [:remove, :destroy]
 
