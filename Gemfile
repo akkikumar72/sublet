@@ -23,3 +23,13 @@ gem "letter_opener", :group => :development
 gem "annotate", :group => :development
 gem 'letter_opener_web', :group => :development
 gem 'activeadmin', github: 'activeadmin'
+
+group :development do
+  gem 'debugger'
+  gem 'better_errors', '0.9.0'
+  gem 'binding_of_caller'
+  gem 'thin'
+  gem 'mailcatcher'
+  gem 'quiet_assets'
+  gem 'pry-rails'
+end
