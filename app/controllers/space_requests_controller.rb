@@ -2,6 +2,9 @@ class SpaceRequestsController < ApplicationController
 
   def new
     @space_request = SpaceRequest.new
+    respond_to do |format|
+      format.js
+    end
   end
 
   def create

@@ -1,5 +1,8 @@
 class SpaceRequest < ActiveRecord::Base
 
+  validates_presence_of :size, :city, :budget, :email
+  validates :email, :email_format => true
+
 end
 
 # == Schema Information
