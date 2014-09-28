@@ -1,4 +1,5 @@
 class SpaceRequest < ActiveRecord::Base
+
 end
 
 # == Schema Information
