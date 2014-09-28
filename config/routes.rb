@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     member do
       get 'remove'
     end
+
+    resources :tenant_responses
   end
 
   root 'spaces#index'

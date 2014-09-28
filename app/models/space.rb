@@ -23,6 +23,8 @@ class Space < ActiveRecord::Base
   friendly_id :title, use: :slugged
 
   has_many :images, dependent: :destroy
+  has_many :tenant_responses, dependent: :destroy
+
   accepts_nested_attributes_for :images, allow_destroy: true
 
   validates_numericality_of :size, :zipcode, :only_integer => true, :greater_than_or_equal_to => 1
