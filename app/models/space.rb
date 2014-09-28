@@ -29,6 +29,7 @@ class Space < ActiveRecord::Base
 
   validates_numericality_of :size, :zipcode, :only_integer => true, :greater_than_or_equal_to => 1
   validates_presence_of :title, :price, :size, :zipcode, :email
+  validates :email, :email_format => true
 
   default_scope -> { where(active: true).order("created_at DESC") }
 
