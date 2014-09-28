@@ -32,4 +32,5 @@ group :development do
   gem 'mailcatcher'
   gem 'quiet_assets'
   gem 'pry-rails'
+  gem 'xray-rails'
 end
