@@ -25,7 +25,7 @@ gem 'letter_opener_web', :group => :development
 gem 'activeadmin', github: 'activeadmin'
 
 group :development do
-  #gem 'debugger'
+  gem 'debugger'
   gem 'better_errors', '0.9.0'
   gem 'binding_of_caller'
   gem 'thin'
