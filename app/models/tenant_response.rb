@@ -3,6 +3,17 @@ class TenantResponse < ActiveRecord::Base
   belongs_to :space
 
   validates_presence_of :email, :description
+
+  after_commit :send_email_to_space_owner, on: :create
+
+  #  ===================
+  #  = Private Methods =
+  #  ===================
+
+  def send_email_to_space_owner
+    owner_email = self.space.email
+    UserMailer.tenant_response_received(owner_email, self).deliver
+  end
 end
 
 # == Schema Information

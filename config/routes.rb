@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get 'remove'
     end
 
-    resources :tenant_responses
+    resources :tenant_responses, only: [:new, :create]
   end
 
   root 'spaces#index'
