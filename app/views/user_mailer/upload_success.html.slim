@@ -3,9 +3,9 @@ p.strong
 
 p
   ' Your listing has been added! You can access it here
-= space_url(@space)
+= space_url(@space.id)
 
 p
   ' To remove your listing click here:
 
-= remove_space_url(id: @space.id)
+= remove_space_url(id: @space.removal_token)

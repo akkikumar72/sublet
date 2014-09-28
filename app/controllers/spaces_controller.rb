@@ -1,6 +1,6 @@
 class SpacesController < ApplicationController
-  before_action :set_space, only: [:show, :edit, :update]
-  before_action :find_to_destroy, only: [:remove, :destroy]
+  before_action :set_space, only: [:show, :edit, :update, :destroy]
+  before_action :find_to_destroy, only: [:remove]
 
   def index
     @spaces = @q.result.includes(:images).paginate(per_page: 10, page: params[:page])
@@ -43,7 +43,7 @@ class SpacesController < ApplicationController
 
     # Use callbacks to share common setup or constraints between actions.
     def find_to_destroy
-      @space = Space.find_by_id(params[:id])
+      @space = Space.find_by_removal_token(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
