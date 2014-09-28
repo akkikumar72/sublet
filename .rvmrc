@@ -1,1 +1,1 @@
-rvm use 2.1@sublet.com --create
+rvm use ruby-1.9.3-p484@sublet.com --create
