@@ -11,9 +11,9 @@ class SpaceRequestsController < ApplicationController
     @space_request = SpaceRequest.new(space_request_params)
     respond_to do |format|
       if @space_request.save
-        format.html { redirect_to spaces_path, notice: 'SpaceRequest was successfully submitted.' }
+        format.js
       else
-        format.html { render :new }
+        format.js { render :new }
       end
     end
   end

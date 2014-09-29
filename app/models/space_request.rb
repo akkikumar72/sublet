@@ -2,6 +2,8 @@ class SpaceRequest < ActiveRecord::Base
 
   validates_presence_of :size, :city, :budget, :email
   validates :email, :email_format => true
+  validates_numericality_of :size, :only_integer => true, :greater_than_or_equal_to => 1
+  validates_numericality_of :budget, :greater_than_or_equal_to => 1
 
 end
 

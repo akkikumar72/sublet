@@ -1,4 +1,4 @@
-= simple_form_for @space_request do |f|
+= simple_form_for @space_request, :remote => true do |f|
   = f.error_notification
 
   = f.input :size
