@@ -1,7 +1,8 @@
 = simple_form_for @space_request, :remote => true do |f|
   = f.error_notification
 
-  = f.input :size
+  = f.input :max_size
+  = f.input :min_size
   = f.input :city
   = f.input :budget
   = f.input :email
