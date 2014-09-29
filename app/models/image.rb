@@ -1,3 +1,9 @@
+class Image < ActiveRecord::Base
+  mount_uploader :file, FileUploader
+
+  belongs_to :space, counter_cache: true
+end
+
 # == Schema Information
 #
 # Table name: images
@@ -8,9 +14,3 @@
 #  created_at :datetime
 #  updated_at :datetime
 #
-
-class Image < ActiveRecord::Base
-  mount_uploader :file, FileUploader
-
-  belongs_to :space, counter_cache: true
-end
