@@ -2,15 +2,18 @@ class SpaceRequestsController < ApplicationController
 
   def new
     @space_request = SpaceRequest.new
+    respond_to do |format|
+      format.js
+    end
   end
 
   def create
     @space_request = SpaceRequest.new(space_request_params)
     respond_to do |format|
       if @space_request.save
-        format.html { redirect_to spaces_path, notice: 'SpaceRequest was successfully submitted.' }
+        format.js
       else
-        format.html { render :new }
+        format.js { render :new }
       end
     end
   end
@@ -21,7 +24,7 @@ class SpaceRequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def space_request_params
-      params.require(:space_request).permit(:size, :city, :budget, :email)
+      params.require(:space_request).permit(:max_size, :min_size, :city, :budget, :email)
     end
 
 end

@@ -1,9 +1,8 @@
-= render "ransack"
+= render "layouts/ransack"
 
 .row.well
   .col-lg-2.sidebar
-    = render 'sidebar'
-
+    = render 'layouts/left_sidebar'
 
   .col-lg-8.show_space
     = link_to '< BACK TO RESULTS', spaces_path
@@ -14,10 +13,12 @@
     br
     h4.description
       = @space.description
-    = link_to 'CONTACT OWNER', "mail-to:#{@space.email}", class: 'contact_owner btn btn-primary'
+    = link_to 'CONTACT OWNER', new_space_tenant_response_path(@space), :remote => true, class: 'contact_owner btn btn-primary'
 
     = render 'spaces/images', space: @space
 
 
   .col-lg-2.sidebar
-    = render 'layouts/fake'
+    = render 'layouts/right_sidebar'
+
+

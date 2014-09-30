@@ -1,10 +1,9 @@
-= render "ransack"
+= render "layouts/ransack"
 
 .row.well
   .col-lg-2.sidebar
-    = render 'sidebar'
-
-  .col-lg-7
+    = render 'layouts/left_sidebar'
+  .col-lg-8
     table.spaces_table
       - @spaces.each do |space|
         tr
@@ -17,5 +16,5 @@
 
     = will_paginate @spaces, renderer: BootstrapPagination::Rails
 
-  .col-lg-3.sidebar
-    = render 'layouts/fake'
+  .col-lg-2.sidebar
+    = render 'layouts/right_sidebar'

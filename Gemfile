@@ -24,7 +24,16 @@ gem "annotate", :group => :development
 gem 'letter_opener_web', :group => :development
 gem 'activeadmin', github: 'activeadmin'
 
-
-gem 'quiet_assets',  group: :development
 gem 'bootstrap-sass-rails'
 gem 'will_paginate-bootstrap'
+
+group :development do
+  #gem 'debugger'
+  gem 'better_errors', '0.9.0'
+  gem 'binding_of_caller'
+  gem 'thin'
+  gem 'mailcatcher'
+  gem 'quiet_assets'
+  gem 'pry-rails'
+  gem 'xray-rails'
+end
