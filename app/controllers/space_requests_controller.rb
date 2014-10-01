@@ -1,6 +1,7 @@
 class SpaceRequestsController < ApplicationController
 
-  before_filter :set_space_request, only: [:show]
+  before_action :set_space_request, only: [:show]
+  before_action :validate_space_request, only: [:show]
 
   def new
     @space_request = SpaceRequest.new
@@ -33,6 +34,11 @@ class SpaceRequestsController < ApplicationController
 
     def set_space_request
       @space_request = SpaceRequest.find_by_id(params[:id])
+      redirect_to root_path unless @space_request.present?
+    end
+
+    def validate_space_request
+      redirect_to new_space_path if @space_request.fake_request
     end
 
 end

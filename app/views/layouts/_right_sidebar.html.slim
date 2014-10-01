@@ -6,6 +6,7 @@ table
       td.requestspace_link
         p
           = link_to link_text_for_space_requtes(space_request), space_request
-
+        p
+          = time_ago_in_words(space_request.created_at) + " ago"
 p
   = link_to 'Request New Space', new_space_request_path, :remote => true
