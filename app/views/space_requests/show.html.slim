@@ -1,0 +1,17 @@
+= render "layouts/ransack"
+
+.row.well
+  .col-lg-2.sidebar
+    = render 'layouts/left_sidebar'
+
+  .col-lg-8.show_space
+    = link_to '< BACK TO RESULTS', spaces_path
+
+    h2 Space Required @#{@space_request.city}
+
+    h3 Size: #{@space_request.min_size} To #{@space_request.max_size}
+
+    h3 Budget: #{@space_request.budget}
+
+  .col-lg-2.sidebar
+    = render 'layouts/right_sidebar'
