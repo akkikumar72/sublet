@@ -18,4 +18,5 @@ class UserMailer < ActionMailer::Base
     mail to: owner_email, subject: "#{@tenant_email} is Interested in your space"
   end
 
+
 end

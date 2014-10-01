@@ -5,7 +5,13 @@ class SpaceRequest < ActiveRecord::Base
   validates_numericality_of :budget, :greater_than_or_equal_to => 1, :allow_blank => true
   validates :email, :email_format => true
 
+  after_commit :send_email_to_admin, on: :create
 
+  def send_email_to_admin
+    unless fake_request
+
+    end
+  end
 
 end
 
