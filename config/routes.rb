@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :space_requests
+  resources :space_requests, except: [:edit, :update]
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

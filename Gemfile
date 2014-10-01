@@ -26,6 +26,7 @@ gem 'activeadmin', github: 'activeadmin'
 
 gem 'bootstrap-sass-rails'
 gem 'will_paginate-bootstrap'
+gem 'whenever', :require => false
 
 group :development do
   #gem 'debugger'

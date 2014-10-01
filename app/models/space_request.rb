@@ -5,6 +5,8 @@ class SpaceRequest < ActiveRecord::Base
   validates_numericality_of :budget, :greater_than_or_equal_to => 1, :allow_blank => true
   validates :email, :email_format => true
 
+
+
 end
 
 # == Schema Information
