@@ -13,12 +13,13 @@ end
 #
 # Table name: space_requests
 #
-#  id         :integer          not null, primary key
-#  max_size   :integer
-#  city       :string(255)
-#  budget     :string(255)
-#  email      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
-#  min_size   :integer
+#  id           :integer          not null, primary key
+#  max_size     :integer
+#  city         :string(255)
+#  budget       :string(255)
+#  email        :string(255)
+#  created_at   :datetime
+#  updated_at   :datetime
+#  min_size     :integer
+#  fake_request :boolean          default(FALSE)
 #
