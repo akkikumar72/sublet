@@ -1,7 +1,11 @@
-h2 Space Required @#{@space_request.city}
+p Hey Admin,
 
-h3 Size: #{@space_request.min_size} To #{@space_request.max_size}
+p  = "A new space request from #{@space_requester_email}"
+
+p Space Required @#{@space_request.city}
+
+p Size: #{@space_request.min_size} To #{@space_request.max_size}
 
 - if @space_request.budget
 
-    h3 Budget: #{number_to_currency @space_request.budget}
+    p Budget: #{number_to_currency @space_request.budget}
