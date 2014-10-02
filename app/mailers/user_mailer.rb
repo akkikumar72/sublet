@@ -8,7 +8,8 @@ class UserMailer < ActionMailer::Base
   #
   def upload_success(space)
     @space = space
-    mail to: space.email, subject: "Thank you for posting the space."
+    @email = space.email
+    mail to: @email, subject: "Thank you for posting the space."
   end
 
   def tenant_response_received(owner_email, tenant_response)
