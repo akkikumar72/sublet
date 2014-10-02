@@ -11,7 +11,9 @@
 
     h3 Size: #{@space_request.min_size} To #{@space_request.max_size}
 
-    h3 Budget: #{@space_request.budget}
+    - if @space_request.budget
+
+        h3 Budget: #{number_to_currency @space_request.budget}
 
   .col-lg-2.sidebar
     = render 'layouts/right_sidebar'

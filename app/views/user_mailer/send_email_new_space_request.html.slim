@@ -1,0 +1,7 @@
+h2 Space Required @#{@space_request.city}
+
+h3 Size: #{@space_request.min_size} To #{@space_request.max_size}
+
+- if @space_request.budget
+
+    h3 Budget: #{number_to_currency @space_request.budget}

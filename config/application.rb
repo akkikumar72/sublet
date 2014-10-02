@@ -24,5 +24,12 @@ module Sublet
       g.test_framework false
       g.helper false
     end
+
+    app_keys = File.join(Rails.root, 'config', 'application_details.yml')
+    CONFIG = HashWithIndifferentAccess.new(YAML::load(IO.read(app_keys)))[Rails.env]
+    CONFIG.each do |k,v|
+      ENV[k.upcase] ||= v
+    end
+
   end
 end

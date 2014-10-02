@@ -18,5 +18,10 @@ class UserMailer < ActionMailer::Base
     mail to: owner_email, subject: "#{@tenant_email} is Interested in your space"
   end
 
+  def send_email_new_space_request(space_request)
+    @space_request = space_request
+    space_requester_email = space_request.email
+    mail to: ENV["ADMIN_EMAIL"], subject: "Space request received from #{space_requester_email} ", reply_to: space_requester_email
+  end
 
 end

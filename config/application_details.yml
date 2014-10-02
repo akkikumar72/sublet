@@ -1,0 +1,5 @@
+development:
+  admin_email: 'peeyush.singla@gmail.com'
+
+production:
+  admin_email: 'admin@sublet.com'
