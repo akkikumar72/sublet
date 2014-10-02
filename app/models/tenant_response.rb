@@ -15,7 +15,7 @@ class TenantResponse < ActiveRecord::Base
 
     def send_email_to_space_owner
       owner_email = self.space.email
-      UserMailer.tenant_response_received(owner_email, self).deliver
+      UserMailer.tenant_response_received(owner_email, self, self.space).deliver
     end
 end
 

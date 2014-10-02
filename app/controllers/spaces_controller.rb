@@ -1,6 +1,6 @@
 class SpacesController < ApplicationController
 
-  before_action :set_space, only: [:show, :edit, :update, :destroy]
+  before_action :set_space, only: [:show, :destroy]
   before_action :find_to_destroy, only: [:remove, :destroy]
 
   def index
@@ -39,12 +39,14 @@ class SpacesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_space
-      @space = Space.friendly.find(params[:id])
+      @space = Space.friendly.find_by_id(params[:id])
+      redirect_to root_path unless @space.present?
     end
 
     # Use callbacks to share common setup or constraints between actions.
     def find_to_destroy
       @space = Space.find_by_removal_token(params[:id])
+      redirect_to root_path unless @space.present?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

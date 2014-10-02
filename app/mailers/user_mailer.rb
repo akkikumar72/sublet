@@ -12,10 +12,11 @@ class UserMailer < ActionMailer::Base
     mail to: @email, subject: "Thank you for posting the space."
   end
 
-  def tenant_response_received(owner_email, tenant_response)
+  def tenant_response_received(owner_email, tenant_response, space)
     @tenant_email = tenant_response.email
     @owner_email = owner_email
     @tenant_response = tenant_response
+    @space = space
     mail to: owner_email, subject: "#{@tenant_email} is Interested in your space", reply_to: @tenant_response
   end
 
