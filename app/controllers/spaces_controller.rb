@@ -39,7 +39,7 @@ class SpacesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_space
-      @space = Space.friendly.find_by_id(params[:id])
+      @space = Space.friendly.find(params[:id])
       redirect_to root_path unless @space.present?
     end
 
