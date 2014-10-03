@@ -42,7 +42,7 @@ class Space < ActiveRecord::Base
   private
 
   def notify_user_with_email
-    UserMailer.upload_success(self).deliver
+    UserMailer.delay.upload_success(self)
   end
 
   def generate_removal_url

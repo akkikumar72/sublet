@@ -9,7 +9,7 @@ class SpaceRequest < ActiveRecord::Base
 
   def send_email_to_admin
     unless fake_request
-      UserMailer.send_email_new_space_request(self)
+      UserMailer.delay.send_email_new_space_request(self)
     end
   end
 
