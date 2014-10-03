@@ -1,8 +1,8 @@
 p
-  = "Hey #{@owner_email}"
+  = "Hey #{@owner_email.email_to_name}"
 
 p
-  = "#{@tenant_email} is interested in your propery"
+  = raw("#{@tenant_email} is interested in your propery " + (link_to @space.title, space_path(@space)))
 
 p
   = @tenant_response.description
