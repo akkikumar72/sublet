@@ -1,4 +1,4 @@
-## Sublet is application for adding spaces and getting tenants, No signup directly get started.
+## Sublet is an application for getting tenants for your spaces, No signup simply get started :).
 
 ### Technology Stack:-
 * Rails 4.1.5
