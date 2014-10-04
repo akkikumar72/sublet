@@ -1,4 +1,3 @@
-fieldset
-  = f.input :file
-  = f.check_box :_destroy
-  = f.label :_destroy, "Remove Question"
+div.form-group
+  = f.label :file
+  = f.file_field :file, class: 'form-control'
