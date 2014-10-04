@@ -9,4 +9,4 @@ table
         p
           = time_ago_in_words(space_request.created_at) + " ago"
 p
-  = link_to '+ Request New Space', new_space_request_path
+  = link_to '+ Request New Space', new_space_request_path, "data-toggle" => "modal", "data-target" => "#requestASpace"
