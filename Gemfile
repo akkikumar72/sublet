@@ -17,6 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'net-ssh', '2.7.0'
 gem 'spring',        group: :development
 gem 'faker',        group: :development
 gem "letter_opener", :group => :development
@@ -29,7 +30,14 @@ gem 'will_paginate-bootstrap'
 gem 'whenever', :require => false
 gem 'delayed_job_active_record'
 
+gem 'execjs'
+gem 'therubyracer', :platforms => :ruby
+
 group :development do
+  gem "capistrano-ext"
+  gem 'rvm-capistrano'
+  gem "capistrano", '~>2.15.5'
+
   #gem 'debugger'
   gem 'better_errors', '0.9.0'
   gem 'binding_of_caller'
