@@ -7,9 +7,9 @@ class Space < ActiveRecord::Base
 
   accepts_nested_attributes_for :images, allow_destroy: true
 
-  validates_numericality_of :size, :zipcode, :only_integer => true, :greater_than_or_equal_to => 1
+  validates_numericality_of :size, :zipcode, :only_integer => true, :greater_than_or_equal_to => 1, :unless => lambda{ |a| a.email.blank? }
   validates_presence_of :title, :price, :size, :zipcode, :email
-  validates :email, :email_format => true
+  validates :email, :email_format => true, :unless => lambda{ |a| a.email.blank? }
 
   default_scope -> { where(active: true).order("created_at DESC") }
 

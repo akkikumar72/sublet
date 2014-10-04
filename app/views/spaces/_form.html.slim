@@ -1,4 +1,12 @@
 = form_for @space , html: { multipart: true }  do |f|
+  - if @space.errors.any?
+    div id="error_explanation"
+      h2
+        ' Please fix the following errors:
+
+      ul
+      - @space.errors.full_messages.each do |message|
+        li = message
 
   div.form-group.col-md-6
     = f.label :title

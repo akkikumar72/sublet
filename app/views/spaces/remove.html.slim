@@ -1,33 +1,25 @@
-p#notice = notice
+= render "layouts/ransack"
 
-p
-  strong Title:
-  = @space.title
-p
-  strong Price:
-  = @space.price
-p
-  strong Size:
-  = @space.size
-p
-  strong Description:
-  = @space.description
-p
-  strong Address:
-  = @space.address
-p
-  strong Zipcode:
-  = @space.zipcode
-p
-  strong Email:
-  = @space.email
-p
-  strong Active:
-  = @space.active
+.row
+  .col-lg-2.sidebar
+    = render 'layouts/left_sidebar'
 
-- @space.images.each do |image|
-  = image_tag image.file.url
-end
+  .col-lg-8.show_space
+    = link_to '< BACK TO RESULTS', spaces_path, style: "float: left;"
+    h2 style="margin-top:50px;"
+      = "#{@space.title} - Rs.#{@space.price}"
+    h3
+      = "#{@space.address} - Rs.#{@space.zipcode}"
+    br
+    h4.description
+      = @space.description
+    = link_to 'CONTACT OWNER', new_space_tenant_response_path(@space), :remote => true, class: 'contact_owner btn btn-primary'
 
-= link_to 'Destroy', @space, data: {:confirm => 'Are you sure?'}, :method => :delete
-= link_to 'Back', spaces_path
+    = render 'spaces/images', space: @space
+
+
+  .col-lg-2.sidebar
+    = render 'layouts/right_sidebar'
+
+
+
