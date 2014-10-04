@@ -16,6 +16,8 @@ after "deploy:update_code", "carrierwave:symlink"
 after "deploy:create_symlink", "deploy:update_crontab"
 
 set :whenever_command, "bundle exec whenever"
+set :shared_children, shared_children + %w{public/uploads}
+
 set(:application) { "sublet" }
 set :delayed_job_args, "-n 2"            # number of delayed job workers
 set :rvm_ruby_string, '2.0.0'             # ruby version you are using...
