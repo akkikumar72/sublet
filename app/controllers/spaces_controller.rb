@@ -31,7 +31,7 @@ class SpacesController < ApplicationController
 
   def destroy
     @space.mark_as_inactive
-    flash[:notice] = "Your listing has been removed."
+    flash[:notice] = "Your space listing has been removed."
     redirect_to root_path
   end
 
