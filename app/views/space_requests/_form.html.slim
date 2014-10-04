@@ -9,21 +9,19 @@
 
   div.form-group.col-md-3
     = f.label :max_size
-    = f.text_field :max_size,  class: 'form-control', placeholder: "Max Size"
+    = f.text_field :max_size,  class: 'form-control', placeholder: "Max Size", :required => true
   div.form-group.col-md-3
     = f.label :min_size
-    = f.text_field :min_size, class: 'form-control', placeholder: "Min Size"
+    = f.text_field :min_size, class: 'form-control', placeholder: "Min Size", :required => true
   div.form-group.col-md-6
     = f.label :city
-    = f.text_field :city, class: 'form-control', placeholder: "City"
+    = f.text_field :city, class: 'form-control', placeholder: "City", :required => true
   div.form-group.col-md-6
     = f.label :budget
-    = f.text_field :budget,  class: 'form-control', placeholder: "Budget"
+    = f.text_field :budget,  class: 'form-control', placeholder: "Budget", :required => true
   div.form-group.col-md-6
     = f.label :email
-    = f.text_field :email, class: 'form-control', placeholder: "Email"
+    = f.text_field :email, class: 'form-control', placeholder: "Email", :required => true
 
-  div.form-group
+  div.form-group  style="margin-left: 15px; margin-top:30px;"
     = f.submit  "Request Space", class: 'btn btn-success'
-
-= link_to 'Back', spaces_path

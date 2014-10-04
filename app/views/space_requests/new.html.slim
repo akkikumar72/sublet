@@ -1,6 +1,7 @@
-h2 style="text-align:center;" Request a Space
+div style= "width:720px; margin-left:175px;"
+  h4 style="text-align:center;"
+    'Request a Space
 
-h4 style="text-align:center;"
-  ' We'll match you with a listing or email you when one becomes available
+  = render 'form'
 
-= render 'form'
+  = link_to 'Back', spaces_path, style: "text-align:left; margin-left: 15px;"

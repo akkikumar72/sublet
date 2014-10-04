@@ -17,7 +17,7 @@
   div.form-group.col-md-3
     = f.label :size
     = f.text_field :size, class: 'form-control', placeholder: "Size", :required => true
-  div.form-group
+  div.form-group style="margin-left: 15px; margin-right: 15px; "
     = f.label :description
     = f.text_area :description, size: '40x2',  class: 'form-control', placeholder: "Description"
   div.form-group.col-md-6
@@ -26,7 +26,7 @@
   div.form-group.col-md-6
     = f.label :zipcode
     = f.text_field :zipcode, class: 'form-control', placeholder: "Zipcode", :required => true
-  div.form-group
+  div.form-group style="margin-left: 15px; margin-right: 15px; "
     = f.label :email
     = f.text_field :email, class: 'form-control', placeholder: "Email", :required => true
 
@@ -34,7 +34,9 @@
   = f.fields_for :images do |builder|
     = render 'image_fields', f: builder
 
-  = link_to_add_fields "Add Image", f, :images
+  div style="margin-left: 15px;"
+    = link_to_add_fields "Add Image", f, :images
 
-  div.form-group
+  div.form-group  style="margin-left: 15px; margin-top:30px;"
     = f.submit  "List Space", class: 'btn btn-success'
+
