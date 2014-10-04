@@ -10,7 +10,7 @@
   space = Space.new
   space.title = Faker::Lorem.sentence
   space.price = Faker::Number.number((2..3).to_a.sample)
-  space.size = Faker::Number.number((2..3).to_a.sample)
+  space.size = Faker::Number.number((2..5).to_a.sample)
   space.description = Faker::Lorem.paragraph
   space.address = Faker::Address.street_address
   space.zipcode = Faker::Address.zip
@@ -25,5 +25,6 @@
     image.save
   end
 
+  SpaceRequest.create_dummy_request_spaces
 end
 

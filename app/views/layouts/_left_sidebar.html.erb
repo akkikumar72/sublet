@@ -8,47 +8,15 @@
 <%= f.submit "< 100 sqft" %>
 <% end %>
 
-<%= search_form_for @q do |f| %>
-<div style="display:none;">
-  <%= f.search_field :zipcode_eq %>
-  <%= f.search_field :size_gteq, value: '100' %>
-  <%= f.search_field :size_lteq, value: '500' %>
-</div>
-<%= f.submit "100-500 sqft" %>
-<% end %>
 
-<%= search_form_for @q do |f| %>
-<div style="display:none;">
-  <%= f.search_field :zipcode_eq %>
-  <%= f.search_field :size_gteq, value: '500' %>
-  <%= f.search_field :size_lteq, value: '1000' %>
-</div>
-<%= f.submit "500-1000 sqft" %>
-<% end %>
-
-<%= search_form_for @q do |f| %>
-<div style="display:none;">
-  <%= f.search_field :zipcode_eq %>
-  <%= f.search_field :size_gteq, value: '1000' %>
-  <%= f.search_field :size_lteq, value: '2500' %>
-</div>
-<%= f.submit "1000-2500 sqft" %>
-<% end %>
-
-<%= search_form_for @q do |f| %>
-<div style="display:none;">
-  <%= f.search_field :zipcode_eq %>
-  <%= f.search_field :size_gteq, value: '2500' %>
-  <%= f.search_field :size_lteq, value: '5000' %>
-</div>
-<%= f.submit "2500-5000 sqft" %>
-<% end %>
-
-<%= search_form_for @q do |f| %>
-<div style="display:none;">
-  <%= f.search_field :zipcode_eq %>
-  <%= f.search_field :size_gteq, value: '5000' %>
-  <%= f.search_field :size_lteq, value: '10000' %>
-</div>
-<%= f.submit "5000-10000 sqft" %>
+<% min_max_size = {"100" => "500", "500" => "1000", "1000" =>"2500", "2500" => "5000", "5000" => "10000" } %>
+<% min_max_size.each do |item| %>
+  <%= search_form_for @q do |f| %>
+    <div style="display:none;">
+      <%= f.search_field :zipcode_eq %>
+      <%= f.search_field :size_gteq, value: item.first %>
+      <%= f.search_field :size_lteq, value: item.last %>
+    </div>
+  <%= f.submit "#{item.first}-#{item.last} sqft" %>
+  <% end %>
 <% end %>

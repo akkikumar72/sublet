@@ -22,5 +22,5 @@
 # Add fake space request data
 
 every 2.hours do
-  runner "SpaceRequest:create_dummy_request_spaces"
+  runner "SpaceRequest.create_dummy_request_spaces"
 end
