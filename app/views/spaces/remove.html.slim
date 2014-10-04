@@ -5,7 +5,7 @@
     = render 'layouts/left_sidebar'
 
   .col-lg-8.show_space
-    = link_to 'REMOVE LISTING', space_path(@space), style:"padding:10px; color:white; background-color:red;margin-top:10px;", method: "delete"
+    = link_to 'Remove this Listing?', space_path(@space), style:"padding:10px; color:white; background-color:red;margin-top:10px;", method: "delete"
     h2 style="margin-top:50px;"
       = "#{@space.title} - Rs.#{@space.price}"
     h3

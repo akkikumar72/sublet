@@ -1,9 +1,10 @@
 class SpaceRequest < ActiveRecord::Base
 
   validates_presence_of :max_size, :min_size, :city, :email
-  validates_numericality_of :max_size, :min_size, :only_integer => true, :greater_than_or_equal_to => 1
-  validates_numericality_of :budget, :greater_than_or_equal_to => 1, :allow_blank => true
-  validates :email, :email_format => true
+  validates_numericality_of :min_size, :only_integer => true, :greater_than_or_equal_to => 1, :unless => lambda{ |a| a.min_size.blank? }
+  validates_numericality_of :max_size, :only_integer => true, :greater_than_or_equal_to => 1, :unless => lambda{ |a| a.max_size.blank? }
+  validates_numericality_of :budget, :greater_than_or_equal_to => 1, :allow_blank => true, :unless => lambda{ |a| a.budget.blank? }
+  validates :email, :email_format => true, :unless => lambda{ |a| a.email.blank? }
 
   after_commit :send_email_to_admin, on: :create
 

@@ -1,10 +1,30 @@
-= simple_form_for @space_request, :remote => true do |f|
-  = f.error_notification
+= form_for @space_request do |f|
+  - if @space_request.errors.any?
+    div id="error_explanation"
+      h2
+        ' Please fix the following errors:
 
-  = f.input :max_size
-  = f.input :min_size
-  = f.input :city
-  = f.input :budget
-  = f.input :email
-  = f.button :submit
+      ul
+      - @space_request.errors.full_messages.each do |message|
+        li = message
 
+  div.form-group.col-md-3
+    = f.label :max_size
+    = f.text_field :max_size,  class: 'form-control'
+  div.form-group.col-md-3
+    = f.label :min_size
+    = f.text_field :min_size, class: 'form-control'
+  div.form-group.col-md-6
+    = f.label :city
+    = f.text_field :city, class: 'form-control'
+  div.form-group.col-md-6
+    = f.label :budget
+    = f.text_field :budget,  class: 'form-control'
+  div.form-group.col-md-6
+    = f.label :email
+    = f.text_field :email, class: 'form-control'
+
+  div.form-group
+    = f.submit  "Request Space", class: 'btn btn-success'
+
+= link_to 'Back', spaces_path

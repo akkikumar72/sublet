@@ -5,18 +5,15 @@ class SpaceRequestsController < ApplicationController
 
   def new
     @space_request = SpaceRequest.new
-    respond_to do |format|
-      format.js
-    end
   end
 
   def create
     @space_request = SpaceRequest.new(space_request_params)
     respond_to do |format|
       if @space_request.save
-        format.js
+        format.html
       else
-        format.js { render :new }
+        format.html { render :new }
       end
     end
   end

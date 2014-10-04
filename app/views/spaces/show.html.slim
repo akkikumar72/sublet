@@ -13,7 +13,7 @@
     br
     h4.description
       = @space.description
-    = link_to 'CONTACT OWNER', new_space_tenant_response_path(@space), :remote => true, class: 'contact_owner btn btn-primary'
+    = link_to 'CONTACT OWNER', new_space_tenant_response_path(@space), class: 'contact_owner btn btn-primary'
 
     = render 'spaces/images', space: @space
 
