@@ -20,3 +20,30 @@
   <%= f.submit "#{item.first}-#{item.last} sqft" %>
   <% end %>
 <% end %>
+
+
+<br>
+<h4>Price</h4>
+
+<%= search_form_for @q do |f| %>
+  <div style="display:none;">
+    <%= f.search_field :price_lteq, value: '500' %>
+  </div>
+  <%= f.submit "low" %>
+<% end %>
+
+<%= search_form_for @q do |f| %>
+  <div style="display:none;">
+    <%= f.search_field :price_gteq, value: 500 %>
+    <%= f.search_field :price_lteq, value: 1500 %>
+  </div>
+  <%= f.submit "medium" %>
+<% end %>
+
+<%= search_form_for @q do |f| %>
+  <div style="display:none;">
+    <%= f.search_field :price_gteq, value: 1500 %>
+  </div>
+  <%= f.submit "high" %>
+<% end %>
+
