@@ -1,6 +1,6 @@
 <div class="row well" style='text-align:center'>
   <%= search_form_for @q do |f| %>
-  <%= f.search_field :zipcode_eq, placeholder: "Enter Zipcode" %>
+  <%= f.search_field :zipcode_eq, placeholder: "Enter Zipcode", class: "form-control", style: "width:250px; align:center; margin-left:500px;" %>
   <div style="display:none;">
     <%= f.search_field :size_gteq %>
     <%= f.search_field :size_lteq %>

@@ -8,6 +8,7 @@ class SpacesController < ApplicationController
   end
 
   def show
+    @tenant_response = @space.tenant_responses.new
   end
 
   def new

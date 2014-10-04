@@ -13,10 +13,15 @@
     br
     h4.description
       = @space.description
-    = link_to 'CONTACT OWNER', new_space_tenant_response_path(@space), class: 'contact_owner btn btn-primary'
+
+    button class="btn btn-primary" data-toggle="modal" data-target="#contactOnwer" style="margin-top: 10px; "
+      'CONTACT OWNER
 
 
-    = render 'spaces/images', space: @space if @space.images.present?
+    div style="margin-button:50px;"
+    br
+    br
+      = render 'spaces/images', space: @space if @space.images.present?
 
 
   .col-lg-2.sidebar
@@ -24,3 +29,4 @@
 
 
 
+= render "tenant_responses/modal_for_contact_owner"
