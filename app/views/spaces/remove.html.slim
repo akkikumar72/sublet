@@ -7,9 +7,9 @@
   .col-lg-8.show_space
     = link_to 'Remove this Listing?', space_path(@space.removal_token), style:"padding:10px; color:white; background-color:red;margin-top:10px;", method: "delete"
     h2 style="margin-top:50px;"
-      = "#{@space.title} - Rs.#{@space.price}"
+      = "#{@space.title} - #{number_to_currency(@space.price)}"
     h3
-      = "#{@space.address} - Rs.#{@space.zipcode}"
+      = "#{@space.address}, #{@space.zipcode}"
     br
     h4.description
       = @space.description
