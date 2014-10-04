@@ -28,7 +28,7 @@
     = f.text_field :zipcode, class: 'form-control', placeholder: "Zip code", :required => true
   div.form-group style="margin-left: 15px; margin-right: 15px; "
     = f.label :email
-    = f.text_field :email, class: 'form-control', placeholder: "Email Address", :required => true
+    = f.email_field :email, class: 'form-control', placeholder: "Email Address", :required => true
 
   fieldset
   = f.fields_for :images do |builder|
