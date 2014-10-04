@@ -33,6 +33,7 @@ gem 'will_paginate-bootstrap'
 gem 'whenever', :require => false
 gem 'delayed_job_active_record'
 gem 'airbrake'
+gem 'rb-readline'
 
 group :development do
   gem "capistrano-ext"
