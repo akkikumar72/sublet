@@ -6,7 +6,7 @@
         <h4 class="modal-title" id="myModalLabel">Request a Space</h4>
       </div>
       <div class="modal-body">
-          <% @space_request = SpaceRequest.new  unless defined? @space_request %>
+          <% @space_request = SpaceRequest.new  %>
           <%= render 'space_requests/form' %>
       </div>
       <div class="modal-footer">
