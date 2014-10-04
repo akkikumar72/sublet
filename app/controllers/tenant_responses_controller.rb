@@ -6,6 +6,7 @@ class TenantResponsesController < ApplicationController
     @tenant_response = @space.tenant_responses.new
     respond_to do |format|
       format.js
+      format.html
     end
   end
 
@@ -14,8 +15,10 @@ class TenantResponsesController < ApplicationController
     respond_to do |format|
       if @tenant_response.save
         format.js
+        format.html {redirect_to root_path, notice: "Your message successfully sent to space owner" }
       else
         format.js {render :new}
+        format.html {render :new}
       end
     end
   end
