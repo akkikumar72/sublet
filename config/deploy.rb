@@ -4,7 +4,6 @@ require "bundler/capistrano"            # install all the new missing plugins...
 require 'capistrano/ext/multistage'     # deploy on all the servers..
 require "rvm/capistrano"                # if you are using rvm on your server..
 require './config/boot'
-require 'delayed/recipes'
 require "whenever/capistrano"
 
 
@@ -13,8 +12,6 @@ before "deploy:assets:precompile","deploy:config_symlink"
 after "deploy:update", "deploy:cleanup" #clean up temp files etc.
 after "deploy:update_code","deploy:migrate"
 after "deploy:create_symlink", "deploy:update_crontab"
-after "deploy:start",   "delayed_job:start" #start the delayed job
-after "deploy:restart", "delayed_job:restart" # restart it..
 
 set :whenever_command, "bundle exec whenever"
 set(:application) { "sublet" }
