@@ -5,8 +5,8 @@
     = render 'layouts/left_sidebar'
 
   .col-lg-8.show_space
-    = link_to '< BACK TO RESULTS', spaces_path
-    h2
+    = link_to '< BACK TO RESULTS', spaces_path, style: "float: left;"
+    h2 style="margin-top:50px;"
       = "#{@space.title} - Rs.#{@space.price}"
     h3
       = "#{@space.address} - Rs.#{@space.zipcode}"
@@ -20,5 +20,6 @@
 
   .col-lg-2.sidebar
     = render 'layouts/right_sidebar'
+
 
 
