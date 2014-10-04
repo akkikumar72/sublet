@@ -1,17 +1,26 @@
 
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
 
-
-<div id="myCarousel" class="carousel slide">
-
-  <!-- Carousel items -->
+  <!-- Wrapper for slides -->
   <div class="carousel-inner">
-    <% @space.images.each do |image| %>
-    <div class="active item">
+    <% @space.images.each_with_index do |image, index| %>
+    <div class="item <%= "active" if index == 0 %>">
       <%= image_tag image.file.url %>
     </div>
     <% end %>
   </div>
-  <!-- Carousel nav -->
-  <!-- <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a> -->
-  <!-- <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a> -->
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
 </div>
