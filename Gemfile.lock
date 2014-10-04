@@ -305,7 +305,6 @@ DEPENDENCIES
   letter_opener_web
   mailcatcher
   mini_magick
-  net-ssh (= 2.7.0)
   pg
   pry-rails
   quiet_assets
