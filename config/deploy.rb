@@ -12,6 +12,7 @@ before "deploy:assets:precompile","deploy:config_symlink"
 # before "deploy:update_code",    "delayed_job:stop"  # stop the previous deployed job workers...
 after "deploy:update", "deploy:cleanup" #clean up temp files etc.
 after "deploy:update_code","deploy:migrate"
+after "deploy:update_code", "carrierwave:symlink"
 after "deploy:create_symlink", "deploy:update_crontab"
 
 set :whenever_command, "bundle exec whenever"
@@ -58,5 +59,4 @@ namespace :carrierwave do
   task :symlink, roles: :app do
     run "ln -nfs #{shared_path}/uploads/ #{release_path}/public/uploads"
   end
-  after "deploy:finalize_update", "carrierwave:symlink"
 end
