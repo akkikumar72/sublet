@@ -1,21 +1,21 @@
 = form_for @space , html: { multipart: true }  do |f|
 
-  div.form-group
+  div.form-group.col-md-6
     = f.label :title
     = f.text_field :title,  class: 'form-control'
-  div.form-group
+  div.form-group.col-md-3
     = f.label :price
     = f.text_field :price, class: 'form-control'
-  div.form-group
+  div.form-group.col-md-3
     = f.label :size
     = f.text_field :size, class: 'form-control'
   div.form-group
     = f.label :description
-    = f.text_field :description, class: 'form-control'
-  div.form-group
+    = f.text_area :description, size: '40x2',  class: 'form-control'
+  div.form-group.col-md-6
     = f.label :address
     = f.text_field :address, class: 'form-control'
-  div.form-group
+  div.form-group.col-md-6
     = f.label :zipcode
     = f.text_field :zipcode, class: 'form-control'
   div.form-group
