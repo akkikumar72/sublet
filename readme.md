@@ -42,7 +42,8 @@ RAILS_ENV=development bin/delayed_job start
 
 
 ### To Do:-
+
 * Ask for sendgrid account from the application owner as of now our developer credentials.
 * Setup PG on server to complete deployment.
-* Add Airbrake gem for errors.
+
 
