@@ -9,8 +9,19 @@ class SpaceRequest < ActiveRecord::Base
   after_commit :send_email_to_admin, on: :create
 
   def send_email_to_admin
-    unless fake_request
-      UserMailer.delay.send_email_new_space_request(self)
+    UserMailer.send_email_new_space_request(self).deliver unless fake_request
+  end
+
+  def self.create_dummy_request_spaces
+    5.times do
+      space_request = SpaceRequest.new
+      space_request.min_size = (300..450).to_a.sample
+      space_request.max_size = (500..700).to_a.sample
+      space_request.city = Faker::Address.city
+      space_request.budget = (2000..5000).to_a.sample
+      space_request.email = Faker::Internet.email
+      space_request.fake_request = true
+      space_request.save
     end
   end
 

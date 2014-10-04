@@ -20,6 +20,7 @@
 # Learn more: http://github.com/javan/whenever
 
 # Add fake space request data
+
 every 2.hours do
-  rake "fake_data:create_space_requests"
+  runner "SpaceRequest:create_dummy_request_spaces"
 end

@@ -10,25 +10,25 @@
 
   div.form-group.col-md-6
     = f.label :title
-    = f.text_field :title,  class: 'form-control'
+    = f.text_field :title,  class: 'form-control', placeholder: "Title", :required => true
   div.form-group.col-md-3
     = f.label :price
-    = f.text_field :price, class: 'form-control'
+    = f.text_field :price, class: 'form-control', placeholder: "Price", :required => true
   div.form-group.col-md-3
     = f.label :size
-    = f.text_field :size, class: 'form-control'
+    = f.text_field :size, class: 'form-control', placeholder: "Size", :required => true
   div.form-group
     = f.label :description
-    = f.text_area :description, size: '40x2',  class: 'form-control'
+    = f.text_area :description, size: '40x2',  class: 'form-control', placeholder: "Description"
   div.form-group.col-md-6
     = f.label :address
-    = f.text_field :address, class: 'form-control'
+    = f.text_field :address, class: 'form-control', placeholder: "Address"
   div.form-group.col-md-6
     = f.label :zipcode
-    = f.text_field :zipcode, class: 'form-control'
+    = f.text_field :zipcode, class: 'form-control', placeholder: "Zipcode", :required => true
   div.form-group
     = f.label :email
-    = f.text_field :email, class: 'form-control'
+    = f.text_field :email, class: 'form-control', placeholder: "Email", :required => true
 
   fieldset
   = f.fields_for :images do |builder|

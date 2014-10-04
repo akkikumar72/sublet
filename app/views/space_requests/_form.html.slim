@@ -3,26 +3,25 @@
     div id="error_explanation"
       h2
         ' Please fix the following errors:
-
       ul
       - @space_request.errors.full_messages.each do |message|
         li = message
 
   div.form-group.col-md-3
     = f.label :max_size
-    = f.text_field :max_size,  class: 'form-control'
+    = f.text_field :max_size,  class: 'form-control', placeholder: "Max Size"
   div.form-group.col-md-3
     = f.label :min_size
-    = f.text_field :min_size, class: 'form-control'
+    = f.text_field :min_size, class: 'form-control', placeholder: "Min Size"
   div.form-group.col-md-6
     = f.label :city
-    = f.text_field :city, class: 'form-control'
+    = f.text_field :city, class: 'form-control', placeholder: "City"
   div.form-group.col-md-6
     = f.label :budget
-    = f.text_field :budget,  class: 'form-control'
+    = f.text_field :budget,  class: 'form-control', placeholder: "Budget"
   div.form-group.col-md-6
     = f.label :email
-    = f.text_field :email, class: 'form-control'
+    = f.text_field :email, class: 'form-control', placeholder: "Email"
 
   div.form-group
     = f.submit  "Request Space", class: 'btn btn-success'
