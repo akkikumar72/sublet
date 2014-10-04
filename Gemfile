@@ -29,7 +29,14 @@ gem 'will_paginate-bootstrap'
 gem 'whenever', :require => false
 gem 'delayed_job_active_record'
 
+gem 'execjs'
+gem 'therubyracer', :platforms => :ruby
+
 group :development do
+  gem "capistrano-ext"
+  gem 'rvm-capistrano'
+  gem "capistrano", '~>2.15.5'
+
   #gem 'debugger'
   gem 'better_errors', '0.9.0'
   gem 'binding_of_caller'
