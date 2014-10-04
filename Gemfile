@@ -22,7 +22,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'spring',        group: :development
-gem 'faker',        group: :development
+gem 'faker'
 gem "letter_opener", :group => :development
 gem "annotate", :group => :development
 gem 'letter_opener_web', :group => :development
