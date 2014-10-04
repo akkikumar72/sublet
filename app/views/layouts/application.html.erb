@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <%= render 'layouts/head' %>
+<%= render 'layouts/head' %>
 <body>
-
   <%= render 'layouts/header' %>
-  <%#= render 'layouts/search' %>
-<br>
+  <br>
   <div class="container main_content">
     <div class="page-header" id="banner">
       <div class="row">
+        <% flash.each do |name, msg| %>
+        <div class="alert alert-<%= name.to_s == "notice" ? "success" : "danger" %>" role="alert" >
+          <%= msg %>
+        </div>
+        <% end %>
         <%= yield %>
       </div>
     </div>
   </div>
-
-
 </body>
 </html>

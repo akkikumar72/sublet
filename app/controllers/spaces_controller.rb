@@ -27,7 +27,6 @@ class SpacesController < ApplicationController
 
 
   def remove
-    destroy
   end
 
   def destroy
