@@ -7,10 +7,13 @@
       - @tenant_response.errors.full_messages.each do |message|
         li = message
 
-  div.form-group
-    = f.email_field :email,  class: 'form-control', placeholder: "Email", :required => true
-  div.form-group
-    = f.text_area :description, size: '40x2',  class: 'form-control', placeholder: "Description(optional)", :required => true
+  div.form-group style="margin-left: 15px; margin-right: 15px; "
+    = f.label :description
+    = f.text_area :description, size: '40x2',  class: 'form-control', placeholder: "Description(optional)"
+  div.form-group style="margin-left: 15px; margin-right: 15px; "
+    = f.label :email
+    = f.text_field :email, class: 'form-control', placeholder: "Email", :required => true
 
-  div.form-group
+  div.form-group  style="margin-left: 15px; margin-top:30px;"
+
     = f.submit  "Send", class: 'btn btn-success'
