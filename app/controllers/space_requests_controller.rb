@@ -11,7 +11,7 @@ class SpaceRequestsController < ApplicationController
     @space_request = SpaceRequest.new(space_request_params)
     respond_to do |format|
       if @space_request.save
-        format.html
+        format.html{ redirect_to root_path, notice: 'Thankyou for submitting the space requirement, We will get back to you'}
       else
         format.html { render :new }
       end
