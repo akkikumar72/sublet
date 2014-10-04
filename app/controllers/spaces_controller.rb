@@ -1,6 +1,6 @@
 class SpacesController < ApplicationController
 
-  before_action :set_space, only: [:show, :destroy]
+  before_action :set_space, only: [:show]
   before_action :find_to_destroy, only: [:remove, :destroy]
 
   def index
@@ -31,8 +31,8 @@ class SpacesController < ApplicationController
 
   def destroy
     @space.mark_as_inactive
-    flash[:notice] = "Your listing has been removed."
-    redirect_to spaces_path
+    flash[:notice] = "Your space listing has been removed."
+    redirect_to root_path
   end
 
   private

@@ -12,6 +12,9 @@ gem "slim-rails"
 gem "devise"
 gem 'will_paginate'
 gem "mini_magick"
+
+gem 'execjs'
+gem 'therubyracer', :platforms => :ruby
 gem 'sass-rails', '~> 4.0.3'
 gem 'simple_form'
 gem 'uglifier', '>= 1.3.0'
@@ -29,9 +32,7 @@ gem 'bootstrap-sass-rails'
 gem 'will_paginate-bootstrap'
 gem 'whenever', :require => false
 gem 'delayed_job_active_record'
-
-gem 'execjs'
-gem 'therubyracer', :platforms => :ruby
+gem 'airbrake'
 
 group :development do
   gem "capistrano-ext"

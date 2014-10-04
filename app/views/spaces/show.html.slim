@@ -15,7 +15,8 @@
       = @space.description
     = link_to 'CONTACT OWNER', new_space_tenant_response_path(@space), class: 'contact_owner btn btn-primary'
 
-    = render 'spaces/images', space: @space
+
+    = render 'spaces/images', space: @space if @space.images.present?
 
 
   .col-lg-2.sidebar

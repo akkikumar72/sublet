@@ -5,6 +5,7 @@ require 'capistrano/ext/multistage'     # deploy on all the servers..
 require "rvm/capistrano"                # if you are using rvm on your server..
 require './config/boot'
 require "whenever/capistrano"
+require 'airbrake/capistrano'
 
 
 before "deploy:assets:precompile","deploy:config_symlink"
@@ -51,4 +52,5 @@ namespace :deploy do
    run "cd #{release_path} && bundle exec whenever --update-crontab #{application}"
   end
 end
+
 
