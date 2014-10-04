@@ -6,6 +6,7 @@ require "rvm/capistrano"                # if you are using rvm on your server..
 require './config/boot'
 require 'delayed/recipes'
 require "whenever/capistrano"
+require 'airbrake/capistrano'
 
 
 before "deploy:assets:precompile","deploy:config_symlink"
@@ -54,4 +55,5 @@ namespace :deploy do
    run "cd #{release_path} && bundle exec whenever --update-crontab #{application}"
   end
 end
+
 
