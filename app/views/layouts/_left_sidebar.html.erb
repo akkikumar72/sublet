@@ -2,10 +2,10 @@
 
 <%= search_form_for @q do |f| %>
 <div style="display:none;">
-  <%= f.search_field :zipcode_eq %>
   <%= f.search_field :size_lteq, value: '100' %>
+  <%= f.search_field :size_gteq, value: '0' %>
 </div>
-<%= f.submit "< 100 sqft", style: get_custom_black_colored_class(0, 100, params[:q][:size_gteq], params[:q][:size_lteq]) %>
+<%= f.submit "< 100 sqft", style: get_custom_black_colored_class_for_size("0", "100", params[:q]) %>
 <% end %>
 
 
@@ -13,11 +13,10 @@
 <% min_max_size.each do |item| %>
   <%= search_form_for @q do |f| %>
     <div style="display:none;">
-      <%= f.search_field :zipcode_eq %>
       <%= f.search_field :size_gteq, value: item.first %>
       <%= f.search_field :size_lteq, value: item.last %>
     </div>
-  <%= f.submit "#{item.first}-#{item.last} sqft", style: get_custom_black_colored_class(item.first, item.last, params[:q][:size_gteq], params[:q][:size_lteq]) %>
+  <%= f.submit "#{item.first}-#{item.last} sqft", style: get_custom_black_colored_class_for_size(item.first, item.last, params[:q]) %>
   <% end %>
 <% end %>
 
@@ -27,23 +26,25 @@
 
 <%= search_form_for @q do |f| %>
   <div style="display:none;">
+    <%= f.search_field :price_gteq, value: '0' %>
     <%= f.search_field :price_lteq, value: '500' %>
   </div>
-  <%= f.submit "low" %>
+  <%= f.submit "low", style: get_custom_black_colored_class_for_price("0", "500", params[:q]) %>
 <% end %>
 
 <%= search_form_for @q do |f| %>
   <div style="display:none;">
-    <%= f.search_field :price_gteq, value: 500 %>
-    <%= f.search_field :price_lteq, value: 1500 %>
+    <%= f.search_field :price_gteq, value: '500' %>
+    <%= f.search_field :price_lteq, value: '1500' %>
   </div>
-  <%= f.submit "medium" %>
+  <%= f.submit "medium", style: get_custom_black_colored_class_for_price("500", "1500", params[:q]) %>
 <% end %>
 
 <%= search_form_for @q do |f| %>
   <div style="display:none;">
-    <%= f.search_field :price_gteq, value: 1500 %>
+    <%= f.search_field :price_gteq, value: '1500' %>
+    <%= f.search_field :price_lteq, value: '50000' %>
   </div>
-  <%= f.submit "high" %>
+  <%= f.submit "high", style: get_custom_black_colored_class_for_price("1500", "50000", params[:q]) %>
 <% end %>
 

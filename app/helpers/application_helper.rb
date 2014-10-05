@@ -12,7 +12,21 @@ module ApplicationHelper
     "Looking for #{space_request.size} SQFT in #{space_request.city}"
   end
 
-  def get_custom_black_colored_class(min_size, max_size, selected_min_size, selected_max_size)
-    "color:black; border-bottom: none !important;"
+  def get_custom_black_colored_class_for_size(min_size, max_size, params_q)
+    if params_q.present?
+      if params_q["size_gteq"] == min_size and params_q["size_lteq"] == max_size
+        "color:black; border-bottom: none !important;"
+      end
+    end
   end
+
+  def get_custom_black_colored_class_for_price(min_size, max_size, params_q)
+    if params_q.present?
+      if params_q["price_gteq"] == min_size and params_q["price_lteq"] == max_size
+        "color:black; border-bottom: none !important;"
+      end
+    end
+  end
+
 end
+
