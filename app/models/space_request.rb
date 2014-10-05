@@ -16,11 +16,15 @@ class SpaceRequest < ActiveRecord::Base
       space_request = SpaceRequest.new
       space_request.size = (500..700).to_a.sample
       space_request.city = Faker::Address.city
-      space_request.budget = (2000..5000).to_a.sample
+      space_request.budget = [1,2,3].sample
       space_request.email = Faker::Internet.email
       space_request.fake_request = true
       space_request.save
     end
+  end
+
+  def budget_type
+    budget == "1" ? "Low" : budget == "2" ? "Medium" : "High"
   end
 
 end
