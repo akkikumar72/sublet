@@ -12,7 +12,7 @@ class SpaceRequest < ActiveRecord::Base
   end
 
   def self.create_dummy_request_spaces
-    5.times do
+    2.times do
       space_request = SpaceRequest.new
       space_request.size = (500..700).to_a.sample
       space_request.city = Faker::Address.city
