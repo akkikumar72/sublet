@@ -5,7 +5,7 @@
   <%= f.search_field :zipcode_eq %>
   <%= f.search_field :size_lteq, value: '100' %>
 </div>
-<%= f.submit "< 100 sqft" %>
+<%= f.submit "< 100 sqft", style: get_custom_black_colored_class(0, 100, params[:q][:size_gteq], params[:q][:size_lteq]) %>
 <% end %>
 
 
@@ -17,7 +17,7 @@
       <%= f.search_field :size_gteq, value: item.first %>
       <%= f.search_field :size_lteq, value: item.last %>
     </div>
-  <%= f.submit "#{item.first}-#{item.last} sqft" %>
+  <%= f.submit "#{item.first}-#{item.last} sqft", style: get_custom_black_colored_class(item.first, item.last, params[:q][:size_gteq], params[:q][:size_lteq]) %>
   <% end %>
 <% end %>
 
