@@ -9,6 +9,6 @@ module ApplicationHelper
   end
 
   def link_text_for_space_requtes(space_request)
-    "Looking for #{space_request.min_size} to #{space_request.max_size} in #{space_request.city}"
+    "Looking for #{space_request.size} in #{space_request.city}"
   end
 end

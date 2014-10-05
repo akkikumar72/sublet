@@ -23,8 +23,8 @@ end
 #
 # Table name: tenant_responses
 #
-#  id          :integer          not null, primary key
-#  space_id    :integer
+#  id          :uuid             not null, primary key
+#  space_id    :uuid
 #  email       :string(255)
 #  description :text
 #  created_at  :datetime

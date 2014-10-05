@@ -8,14 +8,12 @@
         li = message
 
   div.form-group.col-md-3
-    = f.text_field :max_size,  class: 'form-control', placeholder: "Max Size", :required => true
-  div.form-group.col-md-3
-    = f.text_field :min_size, class: 'form-control', placeholder: "Min Size", :required => true
-  div.form-group.col-md-6
+    = f.text_field :size, class: 'form-control', placeholder: "SQFT", :required => true
+  div.form-group.col-md-9
     = f.text_field :city, class: 'form-control', placeholder: "City", :required => true
-  div.form-group.col-md-6
+  div.form-group.col-md-12
     = f.text_field :budget,  class: 'form-control', placeholder: "Budget"
-  div.form-group.col-md-6
+  div.form-group.col-md-12
     = f.email_field :email, class: 'form-control', placeholder: "Email", :required => true
 
   div.form-group  style="margin-left: 15px; margin-top:30px;"

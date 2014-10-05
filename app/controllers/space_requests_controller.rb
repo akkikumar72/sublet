@@ -26,7 +26,7 @@ class SpaceRequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def space_request_params
-      params.require(:space_request).permit(:max_size, :min_size, :city, :budget, :email)
+      params.require(:space_request).permit(:size, :city, :budget, :email)
     end
 
     def set_space_request
