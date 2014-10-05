@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require spaces
+//= require bootstrap-select.min
 //= require twitter/bootstrap
 
 
+$('.selectpicker').selectpicker();
