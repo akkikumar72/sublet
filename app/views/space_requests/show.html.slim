@@ -11,7 +11,7 @@
 
     h3 Size: #{@space_request.size} SQFT
 
-    - if @space_request.budget
+    - if @space_request.budget.present?
 
         h3 Budget: #{@space_request.budget_type}
 

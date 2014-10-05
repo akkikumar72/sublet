@@ -6,6 +6,6 @@ p Space Required @#{@space_request.city}
 
 p Size: #{@space_request.size} SQFT
 
-- if @space_request.budget
+- if @space_request.budget.present?
 
     p Budget: #{@space_request.budget_type}

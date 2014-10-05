@@ -4,6 +4,7 @@ class SpaceRequest < ActiveRecord::Base
   validates_numericality_of :size, :only_integer => true, :greater_than_or_equal_to => 1
   validates_numericality_of :budget, :greater_than_or_equal_to => 1, :allow_blank => true, :unless => lambda{ |a| a.budget.blank? }
   validates :email, :email_format => true, :unless => lambda{ |a| a.email.blank? }
+  validate :space_size_is_round_figure, on: :create
 
   after_commit :send_email_to_admin, on: :create
 
@@ -25,6 +26,10 @@ class SpaceRequest < ActiveRecord::Base
 
   def budget_type
     budget == "1" ? "Low" : budget == "2" ? "Medium" : "High"
+  end
+
+  def space_size_is_round_figure
+    errors.add(:size, "Is not a round number") unless size % 10 == 0
   end
 
 end
