@@ -7,9 +7,9 @@
   .col-lg-8.show_space
     = link_to '< BACK TO RESULTS', spaces_path, style: "float: left;"
     h2 style="margin-top:50px;"
-      = "#{@space.title} - #{number_to_currency(@space.price)}"
+      = "#{@space.title}(#{@space.size} SQFT) - #{number_to_currency(@space.price)}"
     h3
-      = "#{@space.address}, #{@space.zipcode}"
+      = "#{@space.address}, #{@space.zipcode}, #{@space.created_at.strftime('%d/%m/%Y')}"
     br
     h4.description
       = @space.description
