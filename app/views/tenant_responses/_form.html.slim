@@ -9,7 +9,7 @@
 
   div.form-group style="margin-left: 15px; margin-right: 15px; "
     = f.label :description
-    = f.text_area :description, size: '40x2',  class: 'form-control', placeholder: "Description", :required => true
+    = f.text_area :description, size: '40x2',  class: 'form-control', placeholder: "Description", :required => true, :value => tenant_response_description(@tenant_response, @space)
   div.form-group style="margin-left: 15px; margin-right: 15px; "
     = f.label :email
     = f.email_field :email, class: 'form-control', placeholder: "Email", :required => true
