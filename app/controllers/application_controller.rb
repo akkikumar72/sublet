@@ -5,6 +5,14 @@ class ApplicationController < ActionController::Base
   before_action :set_last_five_requested_spaces
   protect_from_forgery with: :exception
 
+  def verify_captcha_values
+    if verify_recaptcha
+      true
+    else
+      flash[:recaptcha_error] = "Invalid captcha"
+      false
+    end
+  end
 
   private
 
@@ -15,4 +23,6 @@ class ApplicationController < ActionController::Base
   def set_last_five_requested_spaces
     @requested_spaces = SpaceRequest.last(5)
   end
+
+
 end

@@ -8,7 +8,7 @@ class TenantResponsesController < ApplicationController
 
   def create
     @tenant_response = @space.tenant_responses.new(tenant_responses_params)
-    if @tenant_response.save
+    if verify_captcha_values and @tenant_response.save
       flash[:notice] = "Request sent to the owner"
       redirect_to @space
     else

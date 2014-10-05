@@ -18,7 +18,7 @@ class SpacesController < ApplicationController
   def create
     @space = Space.new(space_params)
     respond_to do |format|
-      if @space.save
+      if verify_captcha_values and @space.save
         format.html { redirect_to @space, notice: 'Space was successfully created.' }
       else
         format.html { render :new }

@@ -27,6 +27,7 @@ gem "letter_opener", :group => :development
 gem "annotate", :group => :development
 gem 'letter_opener_web', :group => :development
 gem 'activeadmin', github: 'activeadmin'
+gem "recaptcha", :require => "recaptcha/rails"
 
 gem 'bootstrap-sass-rails'
 gem 'will_paginate-bootstrap'

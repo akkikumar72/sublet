@@ -14,6 +14,8 @@
     = f.label :email
     = f.email_field :email, class: 'form-control', placeholder: "Email", :required => true
 
+    = recaptcha_tags
+
   div.form-group  style="margin-left: 15px; margin-top:30px;"
 
     = f.submit  "Send", class: 'btn btn-success'

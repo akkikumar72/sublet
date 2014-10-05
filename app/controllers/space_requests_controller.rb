@@ -10,7 +10,7 @@ class SpaceRequestsController < ApplicationController
   def create
     @space_request = SpaceRequest.new(space_request_params)
     respond_to do |format|
-      if @space_request.save
+      if verify_captcha_values and @space_request.save
         format.html{ redirect_to root_path, notice: 'Thankyou for submitting the space requirement, We will get back to you'}
       else
         format.html { render :new }
