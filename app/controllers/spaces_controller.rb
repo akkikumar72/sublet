@@ -13,6 +13,10 @@ class SpacesController < ApplicationController
 
   def new
     @space = Space.new
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def create
@@ -54,4 +58,4 @@ class SpacesController < ApplicationController
       params.require(:space).permit(:title, :price, :size, :description, :address, :zipcode, :email, :active, :q, images_attributes: [:id, :file, :space_id])
     end
 
-end
+  end

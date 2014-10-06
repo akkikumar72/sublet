@@ -12,9 +12,7 @@
     <div class="navbar-collapse collapse">
 
       <ul class="nav navbar-nav navbar-right">
-      <button class="btn btn-primary" data-toggle="modal" data-target="#postANewSpace" style="margin-top: 10px; ">
-        + Add Your Space
-      </button>
+        <%= link_to "+ Add Your Space", new_space_path, remote: true, class: "btn btn-primary", style: "margin-top: 10px; "%>
       </ul>
       </div>
   </div>

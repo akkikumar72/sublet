@@ -9,5 +9,4 @@ table
         p
           = time_ago_in_words(space_request.created_at) + " ago"
 
-button class="btn btn-link" data-toggle="modal" data-target="#requestASpace" style="margin-top: 10px;"
-  '+ Request New Space
+= link_to "+ Request New Space", new_space_request_path, remote: true, class: "btn btn-link"

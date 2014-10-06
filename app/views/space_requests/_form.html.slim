@@ -16,7 +16,7 @@
   div.form-group.col-md-12
     = f.email_field :email, class: 'form-control', placeholder: "Email", :required => true
 
-    = recaptcha_tags
+    = recaptcha_tags(display: {theme: 'clean'}, ajax: true)
 
   div.form-group  style="margin-left: 15px; margin-top:30px;"
     = f.submit  "Request Space", class: 'btn btn-success'

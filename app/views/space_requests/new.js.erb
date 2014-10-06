@@ -1,5 +1,4 @@
-<% if @space_request.errors.count == 0 %>
-
-<% else %>
-
-<% end %>
+$("#postANewSpaceContent").html("");
+$("#requestASpaceContent").html("<%= escape_javascript(render 'space_requests/form')%> ");
+$('.selectpicker').selectpicker();
+$("#requestASpace").modal();
