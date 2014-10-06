@@ -1,4 +1,9 @@
+
+$("#requestASpaceContent").html("");
 $("#postANewSpaceContent").html("");
+$("#contactOnwerContent").html("");
+
+
 $("#requestASpaceContent").html("<%= escape_javascript(render 'space_requests/form')%> ");
 $('.selectpicker').selectpicker();
 $("#requestASpace").modal();
