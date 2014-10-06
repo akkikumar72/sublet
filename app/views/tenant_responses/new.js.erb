@@ -1,0 +1,9 @@
+
+$("#requestASpaceContent").html("");
+$("#postANewSpaceContent").html("");
+$("#contactOnwerContent").html("");
+
+
+$("#contactOnwerContent").html("<%= escape_javascript(render 'tenant_responses/form')%> ");
+$('.selectpicker').selectpicker();
+$("#contactOnwer").modal();
