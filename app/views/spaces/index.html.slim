@@ -12,6 +12,8 @@
             p
               = link_to space.title, space
             p
+             = "#{space.size} SQFT - #{number_to_currency(space.price)}"
+            p
               = space.created_at.strftime "%Y-%m-%d"
 
     = will_paginate @spaces, renderer: BootstrapPagination::Rails
