@@ -9,10 +9,10 @@
         tr
           td = render "image_section", space: space
           td.space_link
-            p
+            span
               = link_to space.title, space
             p
-             = "#{space.size} SQFT - #{number_to_currency(space.price)}"
+              = "#{space.size} SQFT - #{number_to_currency(space.price)}"
             p
               = space.created_at.strftime "%Y-%m-%d"
 
