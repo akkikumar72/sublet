@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_last_five_requested_spaces
-    @requested_spaces = SpaceRequest.last(5)
+    @requested_spaces = SpaceRequest.order('created_at DESC').first(5)
   end
 
 
