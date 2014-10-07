@@ -7,7 +7,7 @@
     table.spaces_table
       - @spaces.each do |space|
         tr
-          td = image_tag(space.images.first.file.url(:thumb)) unless space.images_count ==0
+          td = render "image_section", space: space
           td.space_link
             p
               = link_to space.title, space

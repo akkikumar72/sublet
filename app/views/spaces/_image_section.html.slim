@@ -1,0 +1,5 @@
+- if space.images_count ==0
+    = image_tag 'default_image.gif', size: "100x100", alt: "No image Available"
+-  else
+    = image_tag(space.images.first.file.url(:thumb))
+
